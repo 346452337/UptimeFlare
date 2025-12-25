@@ -43,7 +43,7 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare',
         Authorization: 'Bearer YOUR_TOKEN_HERE',
       },
-      {
+    {
       // `id` should be unique, history will be kept if the `id` remains constant
       id: 'http1002',
       // `name` is used at status page and callback message
