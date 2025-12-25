@@ -18,21 +18,44 @@ const pageConfig: PageConfig = {
 
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
+  passwordProtection: 'gaojinbo:gaojinbo.com',
   monitors: [
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'http1001',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: 'www.gaojinbo.com',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
-      target: 'https://example.com',
+      target: 'https://www.gaojinbo.com',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
       tooltip: 'This is a tooltip for this monitor',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
+      statusPageLink: 'https://www.gaojinbo.com',
+      // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
+      expectedCodes: [200],
+      // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
+      timeout: 10000,
+      // [OPTIONAL] headers to be sent
+      headers: {
+        'User-Agent': 'Uptimeflare',
+        Authorization: 'Bearer YOUR_TOKEN_HERE',
+      },
+      {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'http1002',
+      // `name` is used at status page and callback message
+      name: 'www.btmovies.com',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://www.btmovies.com',
+      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
+      tooltip: 'This is a tooltip for this monitor',
+      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
+      statusPageLink: 'https://www.btmovies.com',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
       expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
